@@ -1,0 +1,7 @@
+{
+  "name": "Ordem",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
