@@ -63,6 +63,7 @@ export class VerifyCodePage implements OnInit {
       if (error) {
         this.showToast('Código inválido, tente novamente');
       } else {
+        await this.supabaseService.getClient().auth.signOut({});
         this.router.navigate(['/reset-password'], {state: { email: this.email.trim() }})
       }
     }

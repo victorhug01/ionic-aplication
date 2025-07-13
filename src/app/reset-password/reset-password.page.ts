@@ -43,6 +43,7 @@ export class ResetPasswordPage implements OnInit {
         this.password = '';
         this.confirmPassword = ''
       } else {
+        await this.supabaseService.getClient().auth.signOut({});
         this.showToast('Senha alterada com sucesso!', 'success');
         this.password = '';
         this.confirmPassword = ''

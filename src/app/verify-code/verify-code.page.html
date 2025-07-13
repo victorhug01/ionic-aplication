@@ -8,18 +8,18 @@
 
 
 <ion-content [fullscreen]="true" class="bg-light" scroll="true">
-  <div class="d-flex justify-content-center align-items-center min-vh-100 w-100 p-3">
+  <div class="d-flex justify-content-center align-items-center min-vh-100 w-100 p-1">
     <div class="container" style="max-width: 600px;">
-      <div class="d-flex justify-content-center gap-2 mb-5">
-        <input name="pin" type="text" maxlength="1" class="form-control text-center" style="width: 3rem;" (input)="moveToNext($event)" autocomplete="off"/>
-        <input name="pin" type="text" maxlength="1" class="form-control text-center" style="width: 3rem;" (input)="moveToNext($event)" autocomplete="off"/>
-        <input name="pin" type="text" maxlength="1" class="form-control text-center" style="width: 3rem;" (input)="moveToNext($event)" autocomplete="off"/>
-        <input name="pin" type="text" maxlength="1" class="form-control text-center" style="width: 3rem;" (input)="moveToNext($event)" autocomplete="off"/>
-        <input name="pin" type="text" maxlength="1" class="form-control text-center" style="width: 3rem;" (input)="moveToNext($event)" autocomplete="off"/>
-        <input name="pin" type="text" maxlength="1" class="form-control text-center" style="width: 3rem;" (input)="moveToNext($event)" autocomplete="off"/>
+      <div class="d-flex justify-content-center gap-2 mb-5" style="height: 4rem;">
+        <input name="pin" type="text" maxlength="1" class="form-control text-center flex-grow-1" (input)="moveToNext($event)" autocomplete="off"/>
+        <input name="pin" type="text" maxlength="1" class="form-control text-center flex-grow-1" (input)="moveToNext($event)" autocomplete="off"/>
+        <input name="pin" type="text" maxlength="1" class="form-control text-center flex-grow-1" (input)="moveToNext($event)" autocomplete="off"/>
+        <input name="pin" type="text" maxlength="1" class="form-control text-center flex-grow-1" (input)="moveToNext($event)" autocomplete="off"/>
+        <input name="pin" type="text" maxlength="1" class="form-control text-center flex-grow-1" (input)="moveToNext($event)" autocomplete="off"/>
+        <input name="pin" type="text" maxlength="1" class="form-control text-center flex-grow-1" (input)="moveToNext($event)" autocomplete="off"/>
       </div>
       <div class="d-flex justify-content-center w-100">
-        <button (click)="verificar()" class="btn btn-primary w-100" style="max-width: 200px;">Verificar</button>
+        <button (click)="verificar()" class="btn btn-primary w-100 p-2" style="max-width: 200px; height: 50px;">Verificar</button>
       </div>
     </div>
   </div>
