@@ -3,11 +3,11 @@
     <div class="container" style="max-width: 600px;">
       <div class="d-grid gap-4">
         <div class="form-floating">
-          <input type="email" class="form-control text-white" id="floatingInputEmailLogin" maxlength="100" placeholder="" style="background-color: transparent !important;">
+          <input [(ngModel)]="email" type="email" class="form-control text-white" id="floatingInputEmailLogin" maxlength="100" placeholder="" style="background-color: transparent !important;">
           <label for="floatingInputEmailLogin" style="color: #5a5a5a!important">Email</label>
         </div>
         <div class="form-floating">
-          <input type="password" class="form-control text-white" id="floatingInputPasswordLogin" maxlength="25" placeholder="" style="background-color: transparent !important;">
+          <input [(ngModel)]="password" type="password" class="form-control text-white" id="floatingInputPasswordLogin" maxlength="25" placeholder="" style="background-color: transparent !important;">
           <label for="floatingInputPasswordLogin" style="color: #5a5a5a!important">Senha</label>
         </div>
         <div class="d-grid justify-content-end w-100 gap-3" style="font-size: 15px !important;">
