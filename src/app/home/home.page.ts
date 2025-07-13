@@ -44,6 +44,10 @@ export class HomePage implements OnInit {
     }
   }
 
+  navigateProducts(){
+    this.router.navigate(['/products']);
+  }
+
 
   async showToast(message: string) {
     const toast = await this.toastCtrl.create({
