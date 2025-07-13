@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SupabaseService } from '../services/supabase.service';
 import { Router } from '@angular/router';
 import { LoadingService } from '../services/loading.service';
@@ -10,9 +10,15 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
   standalone: false,
 })
-export class HomePage {
+export class HomePage implements OnInit {
+  name: String = '';
+
 
   constructor(private router: Router, private supabaseService: SupabaseService, private loadingService: LoadingService, private toastCtrl: ToastController) {}
+
+  async ngOnInit() {
+    await this.getnameConnetedUser()
+  }
 
   async signOut() {
     await this.loadingService.show();
@@ -27,6 +33,17 @@ export class HomePage {
       this.router.navigate(['/login']);
     }
   }
+
+  async getnameConnetedUser() {
+    const { data: { user }, error } = await this.supabaseService.getClient().auth.getUser();
+
+    if (user) {
+      this.name = user.user_metadata?.['full_name'];
+    } else {
+      this.name = 'bem-vindo(a)';
+    }
+  }
+
 
   async showToast(message: string) {
     const toast = await this.toastCtrl.create({
