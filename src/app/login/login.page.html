@@ -3,21 +3,21 @@
     <div class="container" style="max-width: 600px;">
       <div class="d-grid gap-4">
         <div class="form-floating">
-          <input type="email" class="form-control text-white" id="floatingInputEmail" maxlength="100" placeholder="" style="background-color: transparent !important;">
-          <label for="floatingInput" style="color: #5a5a5a!important">Email</label>
+          <input type="email" class="form-control text-white" id="floatingInputEmailLogin" maxlength="100" placeholder="" style="background-color: transparent !important;">
+          <label for="floatingInputEmailLogin" style="color: #5a5a5a!important">Email</label>
         </div>
         <div class="form-floating">
-          <input type="email" class="form-control text-white" id="floatingInputPassword" maxlength="50" placeholder="" style="background-color: transparent !important;">
-          <label for="floatingInput" style="color: #5a5a5a!important">Senha</label>
+          <input type="password" class="form-control text-white" id="floatingInputPasswordLogin" maxlength="25" placeholder="" style="background-color: transparent !important;">
+          <label for="floatingInputPasswordLogin" style="color: #5a5a5a!important">Senha</label>
         </div>
         <div class="d-grid justify-content-end w-100 gap-3" style="font-size: 15px !important;">
-          <a><u>Esqueci minha senha</u></a>
+          <u><a [routerLink]="['/forgot-password']">Esqueci minha senha</a></u>
         </div>
         <div class="d-flex justify-content-center w-100">
-          <button class="btn btn-primary w-100" style="max-width: 400px;">Conectar</button>
+          <button (click)="login()" class="btn btn-primary w-100" style="max-width: 400px;">Conectar</button>
         </div>
         <div class="d-grid justify-content-center w-100 gap-3" style="font-size: 15px !important;">
-          <a>Não tem uma conta? <u class="text-primary">Cadatre-se aqui.</u></a>
+          <a [routerLink]="['/signup']">Não tem uma conta? <u class="text-primary">cadastre-se aqui.</u></a>
         </div>
       </div>
     </div>

@@ -1,0 +1,41 @@
+<ion-header [translucent]="true" class="position-absolute">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="bg-light">
+  <div class="d-flex justify-content-center align-items-center min-vh-100 w-100 p-3">
+    <div class="container" style="max-width: 600px;">
+      <div class="d-grid gap-4">
+        <div class="form-floating">
+          <input type="text" class="form-control text-white" id="floatingInputNameSignUp" maxlength="100" placeholder="" style="background-color: transparent !important;">
+          <label for="floatingInputNameSignUp" style="color: #5a5a5a!important">Nome</label>
+        </div>
+        <div class="form-floating">
+          <input type="email" class="form-control text-white" id="floatingInputEmailSignUp" maxlength="100" placeholder="" style="background-color: transparent !important;">
+          <label for="floatingInputEmailSignUp" style="color: #5a5a5a!important">Email</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control text-white" id="floatingInputPasswordSignUp" maxlength="50" placeholder="" style="background-color: transparent !important;">
+          <label for="floatingInputPasswordSignUp" style="color: #5a5a5a!important">Senha</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control text-white" id="floatingInputConfirmPasswordSignUp" maxlength="50" placeholder="" style="background-color: transparent !important;">
+          <label for="floatingInputConfirmPasswordSignUp" style="color: #5a5a5a!important">Confirmar senha</label>
+        </div>
+      </div>
+
+      <div class="d-grid gap-4">
+        <div class="d-flex justify-content-center w-100 mt-5">
+          <button (click)="signUp()" class="btn btn-primary w-100" style="max-width: 400px;">Cadastrar-se</button>
+        </div>
+        <div class="d-grid justify-content-center w-100 gap-3" style="font-size: 15px !important;">
+          <a [routerLink]="['/login']">Já pussui uma conta? <u class="text-primary">Entre aqui.</u></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

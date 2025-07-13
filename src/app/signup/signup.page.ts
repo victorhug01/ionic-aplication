@@ -3,17 +3,17 @@ import { Router } from '@angular/router';
 
 @Component({
   standalone: false,
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-signup',
+  templateUrl: './signup.page.html',
+  styleUrls: ['./signup.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class SignupPage implements OnInit {
 
   constructor(private router: Router) { }
 
   ngOnInit() {}
 
-  login() {
+  signUp() {
     this.router.navigate(['/']);
   }
 
