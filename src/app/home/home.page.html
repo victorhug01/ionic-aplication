@@ -1,7 +1,7 @@
 <ion-header [translucent]="true" class="position-absolute">
   <ion-toolbar class="px-3">
     <ion-buttons slot="end">
-      <ion-button [routerLink]="['/login']" fill="clear">
+      <ion-button fill="clear" (click)="signOut();">
         <ion-icon name="log-out-outline" size="large"></ion-icon>
       </ion-button>
     </ion-buttons>
