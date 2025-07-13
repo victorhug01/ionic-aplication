@@ -2,17 +2,21 @@
   <div class="d-flex justify-content-center align-items-center min-vh-100 w-100 p-1">
     <div class="container" style="max-width: 600px;">
       <form #formLogin="ngForm" (ngSubmit)="login()">
-        <div class="d-grid gap-4">
-          <div class="form-floating">
-            <input [(ngModel)]="email" name="email" type="email" class="form-control text-white" id="floatingInputEmailLogin" maxlength="100" placeholder="" style="background-color: transparent !important;" autocomplete="off">
-            <label for="floatingInputEmailLogin" style="color: #5a5a5a!important">Email</label>
-          </div>
-          <div class="form-floating">
-            <input [(ngModel)]="password" name="password" type="password" class="form-control text-white" id="floatingInputPasswordLogin" maxlength="25" placeholder="" style="background-color: transparent !important;" autocomplete="off">
-            <label for="floatingInputPasswordLogin" style="color: #5a5a5a!important">Senha</label>
-          </div>
-          <div class="d-grid justify-content-end w-100 gap-3" style="font-size: 15px !important;">
-            <u><a [routerLink]="['/forgot-password']">Esqueci minha senha</a></u>
+        <div class="d-grid gap-3">
+          <h2 class="text-center">Login</h2>
+          <p class="text-center mb-5" style="font-size: 15px !important;">Acesse sua conta informando e-mail e senha<br> para continuar.</p>
+          <div class="d-grid gap-3 mb-5">
+            <div class="form-floating">
+              <input [(ngModel)]="email" name="email" type="email" class="form-control text-white" id="floatingInputEmailLogin" maxlength="100" placeholder="" style="background-color: transparent !important;" autocomplete="off">
+              <label for="floatingInputEmailLogin" style="color: #5a5a5a!important">Email</label>
+            </div>
+            <div class="form-floating">
+              <input [(ngModel)]="password" name="password" type="password" class="form-control text-white" id="floatingInputPasswordLogin" maxlength="25" placeholder="" style="background-color: transparent !important;" autocomplete="off">
+              <label for="floatingInputPasswordLogin" style="color: #5a5a5a!important">Senha</label>
+            </div>
+            <div class="d-grid justify-content-end w-100 gap-3" style="font-size: 15px !important;">
+              <u><a [routerLink]="['/forgot-password']">Esqueci minha senha</a></u>
+            </div>
           </div>
           <div class="d-flex justify-content-center w-100">
             <button type="submit" class="btn btn-primary w-100 p-2" style="max-width: 400px; height: 50px;">Conectar</button>

@@ -7,23 +7,27 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="bg-light" scroll="true">
-  <div class="d-flex justify-content-center align-items-center min-vh-100 w-100 p-1">
+  <div class="d-flex justify-content-center align-items-center min-vh-100 w-100 p-1 h-auto" style="padding-top: 10vh !important;">
     <div class="container" style="max-width: 600px;">
       <div class="d-grid gap-4">
+        <div class="d-grid gap-3">
+          <h2 class="text-center">Cadastre-se</h2>
+          <p class="text-center mb-4" style="font-size: 15px !important;">Crie sua conta informando nome, e-mail e senha para começar a usar o app.</p>
+        </div>
         <div class="form-floating">
-          <input type="text" class="form-control text-white" id="floatingInputNameSignUp" maxlength="100" placeholder="" style="background-color: transparent !important;">
+          <input [(ngModel)]="name" type="text" class="form-control text-white" id="floatingInputNameSignUp" maxlength="100" placeholder="" style="background-color: transparent !important;" autocomplete="off">
           <label for="floatingInputNameSignUp" style="color: #5a5a5a!important">Nome</label>
         </div>
         <div class="form-floating">
-          <input type="email" class="form-control text-white" id="floatingInputEmailSignUp" maxlength="100" placeholder="" style="background-color: transparent !important;">
+          <input [(ngModel)]="email" type="email" class="form-control text-white" id="floatingInputEmailSignUp" maxlength="100" placeholder="" style="background-color: transparent !important;" autocomplete="off">
           <label for="floatingInputEmailSignUp" style="color: #5a5a5a!important">Email</label>
         </div>
         <div class="form-floating">
-          <input type="password" class="form-control text-white" id="floatingInputPasswordSignUp" maxlength="50" placeholder="" style="background-color: transparent !important;">
+          <input [(ngModel)]="password" type="password" class="form-control text-white" id="floatingInputPasswordSignUp" maxlength="50" placeholder="" style="background-color: transparent !important;" autocomplete="off">
           <label for="floatingInputPasswordSignUp" style="color: #5a5a5a!important">Senha</label>
         </div>
         <div class="form-floating">
-          <input type="password" class="form-control text-white" id="floatingInputConfirmPasswordSignUp" maxlength="50" placeholder="" style="background-color: transparent !important;">
+          <input [(ngModel)]="confirmPassword" type="password" class="form-control text-white" id="floatingInputConfirmPasswordSignUp" maxlength="50" placeholder="" style="background-color: transparent !important;" autocomplete="off">
           <label for="floatingInputConfirmPasswordSignUp" style="color: #5a5a5a!important">Confirmar senha</label>
         </div>
       </div>
