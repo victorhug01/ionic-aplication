@@ -20,7 +20,7 @@ export class AppComponent {
     await StatusBar.setOverlaysWebView({ overlay: false });
     await StatusBar.setStyle({ style: Style.Dark });
 
-    await Keyboard.setResizeMode({ mode: 'body' as any});
+    await Keyboard.setResizeMode({ mode: 'native' as any});
     await Keyboard.setScroll({ isDisabled: true });
   }
 }

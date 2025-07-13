@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SupabaseService } from '../services/supabase.service';
+import { LoadingService } from '../services/loading.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   standalone: false,
@@ -8,9 +11,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./verify-code.page.scss'],
 })
 export class VerifyCodePage implements OnInit {
-  codigo: string = '';
+  code: string = '';
+  nav = this.router.getCurrentNavigation();
+  email = this.nav?.extras?.state?.['email'];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private supabaseService: SupabaseService, private loadingService: LoadingService, private toastCtrl: ToastController) {}
 
   ngOnInit() {}
 
@@ -32,7 +37,7 @@ export class VerifyCodePage implements OnInit {
     }
   }
 
-  verificar() {
+  async verificar() {
     const inputs = document.querySelectorAll('input[name="pin"]');
     const valores: string[] = [];
 
@@ -40,12 +45,36 @@ export class VerifyCodePage implements OnInit {
       valores.push(input.value);
     });
 
-    this.codigo = valores.join('');
+    this.code = valores.join('');
 
-    if(this.codigo.length === 6){
-      this.router.navigate(['/reset-password'])
+    if(this.code.length != 6){
+      this.showToast('Preencha todos os campos.');
     }else{
-      alert('deu ruim'+ this.codigo.toString())
+      await this.loadingService.show();
+
+      const { data, error } = await this.supabaseService.getClient().auth.verifyOtp({
+        email: this.email,
+        token: this.code,
+        type: 'recovery'
+      });
+
+      await this.loadingService.hide();
+
+      if (error) {
+        this.showToast('Código inválido, tente novamente');
+      } else {
+        this.router.navigate(['/reset-password'], {state: { email: this.email.trim() }})
+      }
     }
+  }
+
+  async showToast(message: string) {
+    const toast = await this.toastCtrl.create({
+      message,
+      duration: 3000,
+      position: 'top',
+      color: 'danger',
+    });
+    await toast.present();
   }
 }
