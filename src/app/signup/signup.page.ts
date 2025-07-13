@@ -21,7 +21,6 @@ export class SignupPage implements OnInit {
   ngOnInit() {}
 
   async signUp() {
-    // this.router.navigate(['/']);
     if (!this.email.trim() || !this.email.trim() || !this.password.trim() || !this.confirmPassword.trim()) {
       this.showToast('Preencha os campos.','danger');
       return;

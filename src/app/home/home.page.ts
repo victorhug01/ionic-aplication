@@ -44,8 +44,12 @@ export class HomePage implements OnInit {
     }
   }
 
-  navigateProducts(){
+  navigateProducts() {
     this.router.navigate(['/products']);
+  }
+
+  navigateOrdens() {
+    this.router.navigate(['/ordens'])
   }
 
 
